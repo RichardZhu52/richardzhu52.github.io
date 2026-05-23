@@ -13,7 +13,7 @@ title                    : "Richard Zhu"
 title_separator          : "-"
 name                     : &name "Richard Zhu"
 description              : &description "Richard Zhu's academic portfolio — ML research for drug discovery and therapeutic AI"
-url                      : https://richardzhu.info # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
+url                      : https://richardzhu52.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "RichardZhu52/richardzhu.github.io"
