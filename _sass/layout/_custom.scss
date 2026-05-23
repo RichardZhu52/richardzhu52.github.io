@@ -1,0 +1,136 @@
+/* ==========================================================================
+   CUSTOM STYLES — richardzhu.github.io
+   ========================================================================== */
+
+$rz-navy    : #1b4f8a;
+$rz-blue    : #2471a3;
+$rz-teal    : #148f77;
+$rz-light   : #eaf4fc;
+
+/* --------------------------------------------------------------------------
+   MASTHEAD — colored bottom accent bar
+   -------------------------------------------------------------------------- */
+
+.masthead {
+  border-bottom: none;
+
+  &::after {
+    height: 3px;
+    background: linear-gradient(to right, $rz-navy, $rz-blue, $rz-teal);
+  }
+}
+
+.masthead__menu-item.selected a,
+.masthead__menu-item.selected a:hover {
+  color: $rz-navy !important;
+  border-bottom-color: $rz-navy !important;
+}
+
+/* --------------------------------------------------------------------------
+   PAGE TITLE (h1)
+   -------------------------------------------------------------------------- */
+
+.page__title {
+  color: $rz-navy;
+}
+
+/* --------------------------------------------------------------------------
+   CONTENT HEADERS
+   -------------------------------------------------------------------------- */
+
+.page__content {
+
+  /* h2 — major section breaks */
+  h2 {
+    color: $rz-navy;
+    border-bottom: 3px solid $rz-blue;
+    padding-bottom: 0.35em;
+    margin-top: 1.8em;
+  }
+
+  /* h3 — sub-section / institution names */
+  h3 {
+    color: $rz-blue;
+    border-left: 4px solid $rz-teal;
+    padding-left: 0.65em;
+    margin-top: 1.4em;
+  }
+
+  /* h4 — minor labels */
+  h4 {
+    color: $rz-teal;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.82em;
+    margin-top: 1.2em;
+  }
+
+  /* HR dividers (--- in Markdown) */
+  hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, $rz-blue, $rz-teal, transparent);
+    margin: 1.8em 0;
+    opacity: 0.6;
+  }
+
+  /* Tables */
+  table {
+    thead tr {
+      background-color: $rz-navy;
+      color: #fff;
+
+      th {
+        color: #fff;
+        border-color: $rz-navy;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+      }
+    }
+
+    tbody tr:hover {
+      background-color: $rz-light;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: mix(#fff, $rz-light, 60%);
+    }
+  }
+
+  /* Blockquotes */
+  blockquote {
+    border-left-color: $rz-teal;
+    background: $rz-light;
+    border-radius: 0 4px 4px 0;
+    padding: 0.6em 1em;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SIDEBAR — author name accent
+   -------------------------------------------------------------------------- */
+
+.author__name {
+  color: $rz-navy;
+}
+
+.author__urls {
+  a {
+    &:hover {
+      color: $rz-blue;
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   ARCHIVE / SECTION HEADERS (used on Publications, etc.)
+   -------------------------------------------------------------------------- */
+
+.archive__subtitle {
+  color: $rz-navy;
+  border-bottom: 3px solid $rz-blue;
+}
+
+.page__content h2.archive__subtitle {
+  border-bottom: 3px solid $rz-blue;
+}
