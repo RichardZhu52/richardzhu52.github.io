@@ -23,7 +23,7 @@ repository               : "RichardZhu52/richardzhu.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile_pic.webp"
   name             : "Richard Zhu"
   pronouns         : # example: "she/her"
   bio              : "S.M. CS & A.B. Statistics, Harvard University. ML research for drug discovery and therapeutic AI."
@@ -66,7 +66,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "richard-zhu-4236901a7"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -243,7 +243,7 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       read_time: true
       comments: true
       share: true
@@ -254,14 +254,14 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: true
+      author_profile: false
   # _teaching
   - scope:
       path: ""
       type: teaching
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       share: true
       comments: true
   # _publications
@@ -270,7 +270,7 @@ defaults:
       type: publications
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       share: true
       comments: true
   # _portfolio
@@ -279,7 +279,7 @@ defaults:
       type: portfolio
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       share: true
       comment: true
   # _talks
@@ -288,7 +288,7 @@ defaults:
       type: talks
     values:
       layout: talk
-      author_profile: true
+      author_profile: false
       share: true
 
 

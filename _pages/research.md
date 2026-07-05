@@ -1,8 +1,8 @@
 ---
 layout: archive
-title: "Research & Employment"
+title: "Research"
 permalink: /research/
-author_profile: true
+author_profile: false
 ---
 
 ## Research Experience

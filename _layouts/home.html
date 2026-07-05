@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<main id="main" class="home-main" role="main">
+  <section class="home-about" aria-labelledby="home-about-title">
+    <div class="home-about__copy">
+      <h1 id="home-about-title">About Me</h1>
+      <div class="home-about__content">
+        {{ content }}
+      </div>
+    </div>
+
+    <div class="home-about__media">
+      <picture class="home-about__photo">
+        <source srcset="{{ base_path }}/images/profile_pic.webp" type="image/webp">
+        <img src="{{ base_path }}/images/profile_pic.jpeg" alt="{{ site.author.name }}" fetchpriority="high">
+      </picture>
+
+      <div class="home-about__links" aria-label="Profile links">
+        {% if site.author.googlescholar %}
+          <a href="{{ site.author.googlescholar }}" aria-label="Google Scholar" title="Google Scholar">
+            <i class="ai ai-google-scholar" aria-hidden="true"></i>
+          </a>
+        {% endif %}
+        {% if site.author.email %}
+          <a href="mailto:{{ site.author.email }}" aria-label="Email" title="Email">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
+        {% endif %}
+        {% assign linkedin = site.author.linkedin | default: "https://www.linkedin.com/in/richard-zhu-4236901a7/" %}
+        {% if linkedin %}
+          {% if linkedin contains "://" %}
+            {% assign linkedin_url = linkedin %}
+          {% else %}
+            {% assign linkedin_url = "https://www.linkedin.com/in/" | append: linkedin %}
+          {% endif %}
+          <a href="{{ linkedin_url }}" aria-label="LinkedIn" title="LinkedIn">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+</main>

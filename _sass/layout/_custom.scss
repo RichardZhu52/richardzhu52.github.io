@@ -1,136 +1,421 @@
 /* ==========================================================================
-   CUSTOM STYLES — richardzhu.github.io
+   CUSTOM STYLES - richardzhu.github.io
    ========================================================================== */
 
-$rz-navy    : #1b4f8a;
-$rz-blue    : #2471a3;
-$rz-teal    : #148f77;
-$rz-light   : #eaf4fc;
+:root,
+html[data-theme="dark"] {
+  --global-base-color: #222;
+  --global-bg-color: #fff;
+  --global-footer-bg-color: #f7f7f7;
+  --global-border-color: #e6e6e6;
+  --global-dark-border-color: #9a9a9a;
+  --global-code-background-color: #f7f7f7;
+  --global-code-text-color: #222;
+  --global-fig-caption-color: #666;
+  --global-link-color: #111;
+  --global-link-color-hover: #666;
+  --global-link-color-visited: #444;
+  --global-masthead-link-color: #777;
+  --global-masthead-link-color-hover: #111;
+  --global-text-color: #222;
+  --global-text-color-light: #777;
+  --global-thead-color: #f0f0f0;
+}
+
+body {
+  background: #fff;
+  color: #222;
+}
+
+a {
+  color: #111;
+}
 
 /* --------------------------------------------------------------------------
-   MASTHEAD — colored bottom accent bar
+   Masthead
    -------------------------------------------------------------------------- */
 
 .masthead {
-  border-bottom: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  background: #fff;
+  border-bottom: 0;
 
   &::after {
-    height: 3px;
-    background: linear-gradient(to right, $rz-navy, $rz-blue, $rz-teal);
+    display: none;
   }
+}
+
+.masthead__inner-wrap {
+  max-width: 1120px;
+  padding: 2.4rem 1.5rem 1.25rem;
+}
+
+.masthead__site-title {
+  display: block;
+  color: #2a2a2a;
+  font-family: $sans-serif-narrow;
+  font-size: clamp(2.1rem, 6vw, 4rem);
+  font-weight: 400;
+  letter-spacing: 0.26em;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    color: #111;
+  }
+}
+
+.masthead__menu {
+  margin-top: 2.1rem;
+}
+
+.greedy-nav {
+  min-width: 0;
+  background: #fff;
+  text-align: center;
+
+  .visible-links {
+    display: flex;
+    justify-content: center;
+    gap: clamp(1.2rem, 7vw, 6rem);
+    width: 100%;
+  }
+
+  .hidden-links {
+    display: none !important;
+  }
+
+  a {
+    margin: 0;
+    padding: 0.25rem 0;
+    color: #777;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.07em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      color: #111;
+    }
+  }
+
+  > button {
+    display: none !important;
+    background: #fff;
+    color: #222;
+  }
+}
+
+.masthead__menu-item {
+  background: transparent;
+}
+
+.night-mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: 1em;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1.1;
+}
+
+.night-mode-toggle:hover {
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+body.night-mode,
+body.night-mode .masthead,
+body.night-mode .greedy-nav,
+body.night-mode .page,
+body.night-mode .archive,
+body.night-mode .footer,
+body.night-mode .sidebar,
+body.night-mode .page__content {
+  background: #111;
+  color: #f2f2f2;
+}
+
+body.night-mode .masthead__site-title,
+body.night-mode a,
+body.night-mode .masthead a,
+body.night-mode .greedy-nav a,
+body.night-mode .home-about__content strong,
+body.night-mode .page__title,
+body.night-mode .archive__subtitle,
+body.night-mode .author__name,
+body.night-mode .page__content h2,
+body.night-mode .page__content h3,
+body.night-mode .page__content h4,
+body.night-mode .home-about__copy h1 {
+  color: #f2f2f2;
+}
+
+body.night-mode .night-mode-toggle {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #f2f2f2;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+body.night-mode .night-mode-toggle:hover {
+  border: 0;
+  background: transparent;
+  color: #f2f2f2;
+}
+
+body.night-mode .masthead__menu-item {
+  background: transparent;
+}
+
+body.night-mode .masthead__menu-item.selected a,
+body.night-mode .masthead__menu-item.selected a:hover {
+  color: #f2f2f2 !important;
+  border-bottom: 0 !important;
+  font-weight: 400;
+}
+
+body.night-mode .home-about__photo,
+body.night-mode .page__hero {
+  background: #1b1b1b;
 }
 
 .masthead__menu-item.selected a,
 .masthead__menu-item.selected a:hover {
-  color: $rz-navy !important;
-  border-bottom-color: $rz-navy !important;
+  color: #111 !important;
+  border-bottom: 0 !important;
+  font-weight: 400;
+}
+
+#main:not(.home-main) {
+  max-width: 1120px;
+  margin-top: 4rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+#main:not(.home-main) .archive,
+#main:not(.home-main) .page {
+  float: none;
+  width: 100%;
+  max-width: 920px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 /* --------------------------------------------------------------------------
-   PAGE TITLE (h1)
+   Home
    -------------------------------------------------------------------------- */
 
-.page__title {
-  color: $rz-navy;
+.home-main {
+  max-width: 1120px;
+  margin: 5.25rem auto 4rem;
+  padding: 0 1.5rem;
+}
+
+.home-about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 440px);
+  align-items: start;
+  gap: clamp(2.5rem, 7vw, 5rem);
+}
+
+.home-about__copy {
+  max-width: 620px;
+}
+
+.home-about__copy h1 {
+  margin: 0 0 1.25rem;
+  color: #222;
+  font-family: $sans-serif-narrow;
+  font-size: 1.65rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.home-about__content {
+  color: #222;
+
+  p,
+  li {
+    font-size: 1.08rem;
+    line-height: 1.75;
+  }
+
+  p {
+    margin: 0 0 1.35rem;
+  }
+
+  strong {
+    color: #111;
+    font-weight: 600;
+  }
+
+  a {
+    color: #111;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+  }
+}
+
+.home-about__media {
+  width: 100%;
+}
+
+.home-about__photo {
+  display: block;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  overflow: hidden;
+  background: #f3f3f3;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.home-about__links {
+  display: flex;
+  justify-content: center;
+  gap: 1.15rem;
+  margin-top: 1.1rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    color: #333;
+    font-size: 1.2rem;
+    text-decoration: none;
+
+    &:hover {
+      color: #777;
+    }
+  }
 }
 
 /* --------------------------------------------------------------------------
-   CONTENT HEADERS
+   General monochrome cleanup
    -------------------------------------------------------------------------- */
+
+.page__title,
+.archive__subtitle,
+.author__name,
+.page__content h2,
+.page__content h3,
+.page__content h4 {
+  color: #222;
+}
 
 .page__content {
-
-  /* h2 — major section breaks */
   h2 {
-    color: $rz-navy;
-    border-bottom: 3px solid $rz-blue;
-    padding-bottom: 0.35em;
-    margin-top: 1.8em;
+    border-bottom: 0;
+    padding-bottom: 0;
   }
 
-  /* h3 — sub-section / institution names */
   h3 {
-    color: $rz-blue;
-    border-left: 4px solid $rz-teal;
-    padding-left: 0.65em;
-    margin-top: 1.4em;
+    border-left: 0;
+    padding-left: 0;
   }
 
-  /* h4 — minor labels */
-  h4 {
-    color: $rz-teal;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-size: 0.82em;
-    margin-top: 1.2em;
-  }
-
-  /* HR dividers (--- in Markdown) */
   hr {
-    border: none;
-    height: 2px;
-    background: linear-gradient(to right, $rz-blue, $rz-teal, transparent);
-    margin: 1.8em 0;
-    opacity: 0.6;
+    border: 0;
+    border-top: 1px solid #e6e6e6;
+    background: transparent;
   }
 
-  /* Tables */
+  blockquote {
+    background: #f7f7f7;
+    border-left-color: #d5d5d5;
+  }
+
   table {
     thead tr {
-      background-color: $rz-navy;
-      color: #fff;
+      background: #f0f0f0;
+      color: #222;
 
       th {
-        color: #fff;
-        border-color: $rz-navy;
-        font-weight: 600;
-        letter-spacing: 0.03em;
+        color: #222;
+        border-color: #e0e0e0;
       }
     }
 
-    tbody tr:hover {
-      background-color: $rz-light;
-    }
-
+    tbody tr:hover,
     tbody tr:nth-child(even) {
-      background-color: mix(#fff, $rz-light, 60%);
-    }
-  }
-
-  /* Blockquotes */
-  blockquote {
-    border-left-color: $rz-teal;
-    background: $rz-light;
-    border-radius: 0 4px 4px 0;
-    padding: 0.6em 1em;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   SIDEBAR — author name accent
-   -------------------------------------------------------------------------- */
-
-.author__name {
-  color: $rz-navy;
-}
-
-.author__urls {
-  a {
-    &:hover {
-      color: $rz-blue;
+      background: #fafafa;
     }
   }
 }
 
-/* --------------------------------------------------------------------------
-   ARCHIVE / SECTION HEADERS (used on Publications, etc.)
-   -------------------------------------------------------------------------- */
-
-.archive__subtitle {
-  color: $rz-navy;
-  border-bottom: 3px solid $rz-blue;
-}
-
+.archive__subtitle,
 .page__content h2.archive__subtitle {
-  border-bottom: 3px solid $rz-blue;
+  border-bottom: 0;
+}
+
+.author__avatar img {
+  border-radius: 0;
+}
+
+@media (max-width: 900px) {
+  .masthead__inner-wrap {
+    padding-top: 1.8rem;
+  }
+
+  .masthead__site-title {
+    font-size: clamp(1.8rem, 9vw, 3rem);
+    letter-spacing: 0.16em;
+  }
+
+  .masthead__menu {
+    margin-top: 1.25rem;
+  }
+
+  .greedy-nav {
+    .visible-links {
+      justify-content: flex-start;
+      gap: 1.4rem;
+      overflow-x: auto;
+      padding-bottom: 0.2rem;
+    }
+
+    a {
+      font-size: 0.82rem;
+    }
+  }
+
+  .home-main {
+    margin-top: 3.2rem;
+  }
+
+  .home-about {
+    grid-template-columns: 1fr;
+  }
+
+  .home-about__media {
+    grid-row: 1;
+    max-width: 440px;
+  }
 }

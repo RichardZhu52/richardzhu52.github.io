@@ -1,25 +1,26 @@
 {% include base_path %}
 <div class="masthead">
   <div class="masthead__inner-wrap">
+    <a class="masthead__site-title" href="{{ base_path }}/">{{ site.title }}</a>
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <button><span class="navicon"></span></button>
+        <button type="button" class="greedy-nav__toggle" aria-label="Toggle menu"><span class="navicon"></span></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
-            <a href="{{ base_path }}/">{{ site.title }}</a>
-          </li>
           {% for link in site.data.navigation.main %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
             {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item {% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
+            <li class="masthead__menu-item persist {% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
               <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
             </li>
           {% endfor %}
-          <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
+          <li class="masthead__menu-item persist">
+            <button id="night-mode-toggle" class="night-mode-toggle" type="button" onclick="toggleNightMode()" aria-pressed="false" aria-label="Toggle night mode">
+              <span class="night-mode-toggle__icon">🌙</span>
+              <span class="night-mode-toggle__label">Night mode</span>
+            </button>
           </li>
         </ul>
         <ul class="hidden-links hidden"></ul>
@@ -27,3 +28,44 @@
     </div>
   </div>
 </div>
+
+<script>
+function toggleNightMode() {
+  const currentMode = localStorage.getItem('nightMode') === 'true';
+  const newMode = !currentMode;
+  localStorage.setItem('nightMode', newMode);
+  applyNightMode(newMode);
+}
+
+function applyNightMode(isEnabled) {
+  const toggle = document.getElementById('night-mode-toggle');
+  const body = document.body;
+
+  document.documentElement.classList.toggle('night-mode', isEnabled);
+  if (body) {
+    body.classList.toggle('night-mode', isEnabled);
+  }
+
+  if (toggle) {
+    toggle.setAttribute('aria-pressed', String(isEnabled));
+    const icon = toggle.querySelector('.night-mode-toggle__icon');
+    const label = toggle.querySelector('.night-mode-toggle__label');
+
+    if (icon) {
+      icon.textContent = isEnabled ? '☀️' : '🌙';
+    }
+
+    if (label) {
+      label.textContent = isEnabled ? 'Day mode' : 'Night mode';
+    }
+  }
+}
+
+function initializeNightMode() {
+  const isNightMode = localStorage.getItem('nightMode') === 'true';
+  applyNightMode(isNightMode);
+}
+
+document.addEventListener('DOMContentLoaded', initializeNightMode);
+initializeNightMode();
+</script>

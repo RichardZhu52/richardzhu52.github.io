@@ -2,7 +2,7 @@
 layout: archive
 title: "Coursework"
 permalink: /coursework/
-author_profile: true
+author_profile: false
 ---
 
 Courses taken at Harvard University (2022–2026). Courses marked with † applied toward the S.M. in Computer Science.

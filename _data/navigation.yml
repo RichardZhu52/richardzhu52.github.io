@@ -7,11 +7,8 @@ main:
   - title: "CV"
     url: /cv/
 
-  - title: "Research & Employment"
-    url: /research/
+  - title: "Science"
+    url: /science/
 
-  - title: "Coursework"
-    url: /coursework/
-
-  - title: "Fun"
-    url: /fun/
+  - title: "Application Resources"
+    url: /applications/
