@@ -17,9 +17,15 @@
             </li>
           {% endfor %}
           <li class="masthead__menu-item persist">
-            <button id="night-mode-toggle" class="night-mode-toggle" type="button" onclick="toggleNightMode()" aria-pressed="false" aria-label="Toggle night mode">
-              <span class="night-mode-toggle__icon">🌙</span>
-              <span class="night-mode-toggle__label">Night mode</span>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme" data-theme="light">
+              <svg class="theme-toggle__icon theme-toggle__icon--sun is-active" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4.25"></circle>
+                <path d="M12 2.5v2.25M12 19.25v2.25M4.75 12H2.5M21.5 12h-2.25M5.96 5.96 4.34 4.34M19.66 19.66l-1.62-1.62M5.96 18.04l-1.62 1.62M19.66 4.34l-1.62 1.62"></path>
+              </svg>
+              <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 14.6A8.5 8.5 0 0 1 9.4 4a8.5 8.5 0 1 0 10.6 10.6Z"></path>
+              </svg>
+              <span class="screen-reader-text">Toggle theme</span>
             </button>
           </li>
         </ul>
@@ -28,44 +34,4 @@
     </div>
   </div>
 </div>
-
-<script>
-function toggleNightMode() {
-  const currentMode = localStorage.getItem('nightMode') === 'true';
-  const newMode = !currentMode;
-  localStorage.setItem('nightMode', newMode);
-  applyNightMode(newMode);
-}
-
-function applyNightMode(isEnabled) {
-  const toggle = document.getElementById('night-mode-toggle');
-  const body = document.body;
-
-  document.documentElement.classList.toggle('night-mode', isEnabled);
-  if (body) {
-    body.classList.toggle('night-mode', isEnabled);
-  }
-
-  if (toggle) {
-    toggle.setAttribute('aria-pressed', String(isEnabled));
-    const icon = toggle.querySelector('.night-mode-toggle__icon');
-    const label = toggle.querySelector('.night-mode-toggle__label');
-
-    if (icon) {
-      icon.textContent = isEnabled ? '☀️' : '🌙';
-    }
-
-    if (label) {
-      label.textContent = isEnabled ? 'Day mode' : 'Night mode';
-    }
-  }
-}
-
-function initializeNightMode() {
-  const isNightMode = localStorage.getItem('nightMode') === 'true';
-  applyNightMode(isNightMode);
-}
-
-document.addEventListener('DOMContentLoaded', initializeNightMode);
-initializeNightMode();
-</script>
+<!-- Theme toggle behavior is handled by assets/js/_main.js -->

@@ -29,13 +29,20 @@ let setTheme = (theme) => {
     localStorage.getItem("theme") ||
     $("html").attr("data-theme") ||
     browserPref;
+  const themeToggle = $("#theme-toggle");
+  const lightIcon = themeToggle.find(".theme-toggle__icon--sun");
+  const darkIcon = themeToggle.find(".theme-toggle__icon--moon");
 
   if (use_theme === "dark") {
     $("html").attr("data-theme", "dark");
-    $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
+    lightIcon.removeClass("is-active");
+    darkIcon.addClass("is-active");
+    themeToggle.attr("data-theme", "dark").attr("aria-label", "Switch to light mode");
   } else if (use_theme === "light") {
     $("html").removeAttr("data-theme");
-    $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
+    lightIcon.addClass("is-active");
+    darkIcon.removeClass("is-active");
+    themeToggle.attr("data-theme", "light").attr("aria-label", "Switch to dark mode");
   }
 };
 
@@ -101,6 +108,35 @@ $(document).ready(function () {
 
   // Enable the theme toggle
   $('#theme-toggle').on('click', toggleTheme);
+
+  // Hide the masthead when scrolling down, show it when scrolling up.
+  let lastScrollY = window.pageYOffset;
+  let ticking = false;
+  const masthead = document.querySelector('.masthead');
+
+  const updateMastheadVisibility = () => {
+    const currentScrollY = window.pageYOffset;
+    if (!masthead) {
+      ticking = false;
+      return;
+    }
+
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+      masthead.classList.add('masthead--hidden');
+    } else if (currentScrollY < lastScrollY) {
+      masthead.classList.remove('masthead--hidden');
+    }
+
+    lastScrollY = currentScrollY;
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(updateMastheadVisibility);
+    }
+  });
 
   // Enable the sticky footer
   var bumpIt = function () {

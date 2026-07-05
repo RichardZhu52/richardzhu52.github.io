@@ -6,8 +6,6 @@ permalink: /applications/
 author_profile: false
 ---
 
-## Application Resources
-
 I am sharing below some of my previous successful applications in the hopes that they will be helpful to future students. **Please do not plagiarize content from these essays. Additionally, please do not reshare or distribute these essays without proper attribution to this site.**
 
 ### NSF Graduate Research Fellowship
