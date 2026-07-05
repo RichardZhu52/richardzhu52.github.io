@@ -2,8 +2,7 @@
    CUSTOM STYLES - richardzhu.github.io
    ========================================================================== */
 
-:root,
-html[data-theme="dark"] {
+:root {
   --global-base-color: #222;
   --global-bg-color: #fff;
   --global-footer-bg-color: #f7f7f7;
@@ -22,13 +21,32 @@ html[data-theme="dark"] {
   --global-thead-color: #f0f0f0;
 }
 
+html[data-theme="dark"] {
+  --global-base-color: #f2f2f2;
+  --global-bg-color: #111;
+  --global-footer-bg-color: #111;
+  --global-border-color: #333;
+  --global-dark-border-color: #555;
+  --global-code-background-color: #1b1b1b;
+  --global-code-text-color: #f2f2f2;
+  --global-fig-caption-color: #bbb;
+  --global-link-color: #f2f2f2;
+  --global-link-color-hover: #fff;
+  --global-link-color-visited: #ddd;
+  --global-masthead-link-color: #f2f2f2;
+  --global-masthead-link-color-hover: #fff;
+  --global-text-color: #f2f2f2;
+  --global-text-color-light: #ccc;
+  --global-thead-color: #1b1b1b;
+}
+
 body {
-  background: #fff;
-  color: #222;
+  background: var(--global-bg-color);
+  color: var(--global-text-color);
 }
 
 a {
-  color: #111;
+  color: var(--global-link-color);
 }
 
 /* --------------------------------------------------------------------------
@@ -36,11 +54,11 @@ a {
    -------------------------------------------------------------------------- */
 
 .masthead {
-  position: fixed;
+  position: relative;
   top: 0;
   width: 100%;
   z-index: 20;
-  background: #fff;
+  background: var(--global-bg-color);
   border-bottom: 0;
 
   &::after {
@@ -55,7 +73,7 @@ a {
 
 .masthead__site-title {
   display: block;
-  color: #2a2a2a;
+  color: var(--global-text-color);
   font-family: $sans-serif-narrow;
   font-size: clamp(2.1rem, 6vw, 4rem);
   font-weight: 400;
@@ -66,7 +84,7 @@ a {
   text-transform: uppercase;
 
   &:hover {
-    color: #111;
+    color: var(--global-link-color-hover);
   }
 }
 
@@ -76,7 +94,7 @@ a {
 
 .greedy-nav {
   min-width: 0;
-  background: #fff;
+  background: var(--global-bg-color);
   text-align: center;
 
   .visible-links {
@@ -101,14 +119,14 @@ a {
     text-transform: uppercase;
 
     &:hover {
-      color: #111;
+      color: var(--global-link-color-hover);
     }
   }
 
   > button {
     display: none !important;
-    background: #fff;
-    color: #222;
+    background: var(--global-bg-color);
+    color: var(--global-text-color);
   }
 }
 
@@ -135,67 +153,55 @@ a {
   border-color: rgba(0, 0, 0, 0.35);
 }
 
-body.night-mode,
-body.night-mode .masthead,
-body.night-mode .greedy-nav,
-body.night-mode .page,
-body.night-mode .archive,
-body.night-mode .footer,
-body.night-mode .sidebar,
-body.night-mode .page__content {
-  background: #111;
+html[data-theme="dark"] body,
+html[data-theme="dark"] .masthead,
+html[data-theme="dark"] .greedy-nav,
+html[data-theme="dark"] .page,
+html[data-theme="dark"] .archive,
+html[data-theme="dark"] .footer,
+html[data-theme="dark"] .sidebar,
+html[data-theme="dark"] .page__content {
+  background: var(--global-bg-color);
+  color: var(--global-text-color);
+}
+
+html[data-theme="dark"] .masthead__site-title,
+html[data-theme="dark"] a,
+html[data-theme="dark"] .masthead a,
+html[data-theme="dark"] .greedy-nav a,
+html[data-theme="dark"] .home-about__content strong,
+html[data-theme="dark"] .page__title,
+html[data-theme="dark"] .archive__subtitle,
+html[data-theme="dark"] .author__name,
+html[data-theme="dark"] .page__content h1,
+html[data-theme="dark"] .page__content h2,
+html[data-theme="dark"] .page__content h3,
+html[data-theme="dark"] .page__content h4,
+html[data-theme="dark"] .page__content h5,
+html[data-theme="dark"] .page__content h6,
+html[data-theme="dark"] .home-about__copy h1 {
   color: #f2f2f2;
 }
 
-body.night-mode .masthead__site-title,
-body.night-mode a,
-body.night-mode .masthead a,
-body.night-mode .greedy-nav a,
-body.night-mode .home-about__content strong,
-body.night-mode .page__title,
-body.night-mode .archive__subtitle,
-body.night-mode .author__name,
-body.night-mode .page__content h2,
-body.night-mode .page__content h3,
-body.night-mode .page__content h4,
-body.night-mode .home-about__copy h1 {
-  color: #f2f2f2;
-}
-
-body.night-mode .night-mode-toggle {
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-  color: #f2f2f2;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-body.night-mode .night-mode-toggle:hover {
-  border: 0;
-  background: transparent;
-  color: #f2f2f2;
-}
-
-body.night-mode .masthead__menu-item {
+html[data-theme="dark"] .masthead__menu-item {
   background: transparent;
 }
 
-body.night-mode .masthead__menu-item.selected a,
-body.night-mode .masthead__menu-item.selected a:hover {
+html[data-theme="dark"] .masthead__menu-item.selected a,
+html[data-theme="dark"] .masthead__menu-item.selected a:hover {
   color: #f2f2f2 !important;
   border-bottom: 0 !important;
   font-weight: 400;
 }
 
-body.night-mode .home-about__photo,
-body.night-mode .page__hero {
+html[data-theme="dark"] .home-about__photo,
+html[data-theme="dark"] .page__hero {
   background: #1b1b1b;
 }
 
 .masthead__menu-item.selected a,
 .masthead__menu-item.selected a:hover {
-  color: #111 !important;
+  color: var(--global-link-color) !important;
   border-bottom: 0 !important;
   font-weight: 400;
 }
@@ -241,7 +247,7 @@ body.night-mode .page__hero {
 
 .home-about__copy h1 {
   margin: 0 0 1.25rem;
-  color: #222;
+  color: var(--global-text-color);
   font-family: $sans-serif-narrow;
   font-size: 1.65rem;
   font-weight: 400;
@@ -251,7 +257,7 @@ body.night-mode .page__hero {
 }
 
 .home-about__content {
-  color: #222;
+  color: var(--global-text-color);
 
   p,
   li {
@@ -264,12 +270,12 @@ body.night-mode .page__hero {
   }
 
   strong {
-    color: #111;
+    color: var(--global-link-color);
     font-weight: 600;
   }
 
   a {
-    color: #111;
+    color: var(--global-link-color);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.15em;
@@ -285,7 +291,7 @@ body.night-mode .page__hero {
   aspect-ratio: 1 / 1;
   width: 100%;
   overflow: hidden;
-  background: #f3f3f3;
+  background: var(--global-code-background-color);
 
   img {
     display: block;
@@ -307,12 +313,12 @@ body.night-mode .page__hero {
     justify-content: center;
     width: 2rem;
     height: 2rem;
-    color: #333;
+    color: var(--global-text-color);
     font-size: 1.2rem;
     text-decoration: none;
 
     &:hover {
-      color: #777;
+      color: var(--global-text-color-light);
     }
   }
 }
@@ -327,7 +333,7 @@ body.night-mode .page__hero {
 .page__content h2,
 .page__content h3,
 .page__content h4 {
-  color: #222;
+  color: var(--global-text-color);
 }
 
 .page__content {
@@ -343,29 +349,29 @@ body.night-mode .page__hero {
 
   hr {
     border: 0;
-    border-top: 1px solid #e6e6e6;
+    border-top: 1px solid var(--global-border-color);
     background: transparent;
   }
 
   blockquote {
-    background: #f7f7f7;
-    border-left-color: #d5d5d5;
+    background: var(--global-code-background-color);
+    border-left-color: var(--global-border-color);
   }
 
   table {
     thead tr {
-      background: #f0f0f0;
-      color: #222;
+      background: var(--global-thead-color);
+      color: var(--global-text-color);
 
       th {
-        color: #222;
-        border-color: #e0e0e0;
+        color: var(--global-text-color);
+        border-color: var(--global-border-color);
       }
     }
 
     tbody tr:hover,
     tbody tr:nth-child(even) {
-      background: #fafafa;
+      background: var(--global-code-background-color);
     }
   }
 }

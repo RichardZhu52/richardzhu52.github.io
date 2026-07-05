@@ -16,7 +16,7 @@ let determineComputedTheme = () => {
   if (themeSetting != "system") {
     return themeSetting;
   }
-  return (userPref && userPref("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 };
 
 // detect OS/browser preference
@@ -95,8 +95,6 @@ if (plotlyElements.length > 0) {
 $(document).ready(function () {
   // SCSS SETTINGS - These should be the same as the settings in the relevant files 
   const scssLarge = 925;          // pixels, from /_sass/_themes.scss
-  const scssMastheadHeight = 70;  // pixels, from the current theme (e.g., /_sass/theme/_default.scss)
-
   // If the user hasn't chosen a theme, follow the OS preference
   setTheme();
   window.matchMedia('(prefers-color-scheme: dark)')
@@ -108,35 +106,6 @@ $(document).ready(function () {
 
   // Enable the theme toggle
   $('#theme-toggle').on('click', toggleTheme);
-
-  // Hide the masthead when scrolling down, show it when scrolling up.
-  let lastScrollY = window.pageYOffset;
-  let ticking = false;
-  const masthead = document.querySelector('.masthead');
-
-  const updateMastheadVisibility = () => {
-    const currentScrollY = window.pageYOffset;
-    if (!masthead) {
-      ticking = false;
-      return;
-    }
-
-    if (currentScrollY > lastScrollY && currentScrollY > 80) {
-      masthead.classList.add('masthead--hidden');
-    } else if (currentScrollY < lastScrollY) {
-      masthead.classList.remove('masthead--hidden');
-    }
-
-    lastScrollY = currentScrollY;
-    ticking = false;
-  };
-
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      ticking = true;
-      window.requestAnimationFrame(updateMastheadVisibility);
-    }
-  });
 
   // Enable the sticky footer
   var bumpIt = function () {
@@ -172,7 +141,7 @@ $(document).ready(function () {
 
   // Init smooth scroll, this needs to be slightly more than then fixed masthead height
   $("a").smoothScroll({
-    offset: -scssMastheadHeight,
+    offset: 0,
     preventDefault: false,
   });
 

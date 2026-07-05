@@ -3,10 +3,9 @@
    ========================================================================== */
 
 .masthead {
-  position: fixed;
+  position: relative;
   background: var(--global-bg-color);
   height: fit-content;
-  top: 0;
   width: 100%;
 
   -webkit-transition: transform 0.25s ease-in-out;
@@ -17,11 +16,6 @@
   -webkit-animation-delay: 0.15s;
           animation-delay: 0.15s;
   z-index: 20;
-
-  &.masthead--hidden {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
-  }
 
   &::after {
     content: "";
