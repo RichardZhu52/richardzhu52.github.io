@@ -29,7 +29,7 @@ Agentic AI---AI models that can use tools, conduct multi-step reasoning, and int
 
 ---
 
-## Other Experiences
+## Other Research
 
 I have explored a number of other scientific fields, including microbial bioinformatics under [Professor Vinayak Mathur](https://www.udel.edu/academics/colleges/cas/units/departments/biological-sciences/our-people/vinayak-mathur/), tool development for clinical assessments of hand function, and AI for ecology.
 
