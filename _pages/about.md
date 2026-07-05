@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a U.S. Fulbright Research Scholar at EPFL, advised by Professor Bruno Correia at the [Laboratory of Protein Design and Immunoengineering](https://www.epfl.ch/labs/lpdi/). My research is additionally supported by the Swiss Government Excellence Fellowship. I previously graduated *summa cum laude* from Harvard University with a bachelor's degree in Statistics and master's degree in Computer Science. I am also an alumnus of [The Peddie School](https://peddie.org/).
+I am a U.S. Fulbright Research Scholar at EPFL, advised by Professor Bruno Correia at the [Laboratory of Protein Design and Immunoengineering](https://www.epfl.ch/labs/lpdi/). My research is additionally supported by the Swiss Government Excellence Fellowship. I previously graduated *summa cum laude* from Harvard, earning a bachelor's degree in Statistics from Harvard College and a concurrent master's degree in Computer Science from Harvard GSAS. I am also an alumnus of [The Peddie School](https://peddie.org/).
 
 My research interests are focused on AI for science and medicine, with a particular focus on developing AI tools for 1. modeling molecular interactions and 2. designing proteins and small molecules with novel therapeutic or chemical applications. I am interested in geometric ML, diffusion, multimodal, and agentic AI approaches for tackling these scientific challenges.
 

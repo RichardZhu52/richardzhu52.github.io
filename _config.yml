@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Richard Zhu"
 title_separator          : "-"
 name                     : &name "Richard Zhu"
-description              : &description "Richard Zhu's academic portfolio — ML research for drug discovery and therapeutic AI"
+description              : &description "Researcher working on AI for biology and medicine. Graduated from Harvard College with an S.M. in Computer Science and an A.B. in Statistics."
 url                      : https://richardzhu52.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
