@@ -401,9 +401,11 @@ html[data-theme="dark"] .page__hero {
 
   .greedy-nav {
     .visible-links {
-      justify-content: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 1.4rem;
-      overflow-x: auto;
+      row-gap: 0.6rem;
+      overflow-x: visible;
       padding-bottom: 0.2rem;
     }
 
