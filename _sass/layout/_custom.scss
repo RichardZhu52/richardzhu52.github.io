@@ -89,19 +89,27 @@ a {
 }
 
 .masthead__menu {
+  display: flex;
+  justify-content: center;
   margin-top: 2.1rem;
 }
 
 .greedy-nav {
+  display: flex;
+  justify-content: center;
   min-width: 0;
+  width: 100%;
   background: var(--global-bg-color);
   text-align: center;
 
   .visible-links {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: clamp(1.2rem, 7vw, 6rem);
     width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
   }
 
   .hidden-links {
@@ -396,6 +404,7 @@ html[data-theme="dark"] .page__hero {
   }
 
   .masthead__menu {
+    justify-content: center;
     margin-top: 1.25rem;
   }
 
@@ -425,5 +434,10 @@ html[data-theme="dark"] .page__hero {
   .home-about__media {
     grid-row: 1;
     max-width: 440px;
+    margin: 0 auto 1.25rem;
+  }
+
+  .home-about__links {
+    justify-content: center;
   }
 }
