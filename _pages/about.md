@@ -14,4 +14,4 @@ My research interests are focused on AI for science and medicine, with a particu
 
 Post-Fulbright, I will be pursuing my PhD in Medical Engineering & Medical Physics (MEMP) in the [Harvard-MIT Health Sciences & Technology](https://hst.mit.edu/) program. I was awarded a NSF Graduate Research Fellowship for my PhD studies.
 
-If we have shared interests, please feel free to email me at [richardyxz [at] gmail.com](mailto:richardyxz@gmail.com) for collaboration, mentorship, or just to connect!
+If we have shared interests, please feel free to email me at [richardyxz@gmail.com](mailto:richardyxz@gmail.com) for collaboration, mentorship, or just to connect!

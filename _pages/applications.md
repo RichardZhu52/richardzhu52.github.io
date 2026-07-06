@@ -1,6 +1,7 @@
 ---
 layout: archive
 title: "Application Resources"
+published: false
 hide_title: true
 permalink: /applications/
 author_profile: false

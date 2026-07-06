@@ -10,5 +10,6 @@ main:
   - title: "Science"
     url: /science/
 
-  - title: "Application Resources"
-    url: /applications/
+  # Application Resources temporarily hidden from public navigation
+  # - title: "Application Resources"
+  #   url: /applications/
