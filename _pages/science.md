@@ -37,6 +37,6 @@ I have explored a number of other scientific fields, including microbial bioinfo
 - **Zhu, R.**, & Mathur, V. (2022). Prophages present in *Acinetobacter pittii* influence bacterial virulence, antibiotic resistance, and genomic rearrangements. *PHAGE*, 3(1), 38–49 \[[Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC9041518/pdf/phage.2021.0014.pdf)\]
 - Mancini, K., Cao, I., Ge, C., Mu, E., **Zhu, R.**, & Mathur, V. (2024). Investigating the role of phage mediated HGT in increasing bacterial virulence. *Bios*, 95(2), 73–78 \[[Paper](https://doi.org/10.1893/BIOS-D-22-00007)\]
 - Laane, C.\*, **Zhu, R.\***, Chandra, J., et al. (2024). Hand and wrist immobilization affects pressure in complex spiral-based drawings. *Tufts Biology Research Symposium*
-- **Zhu, R.**, Hou, C., & McPhie, K. (2026). BIRDGen: Multimodal conditional inference of latent unbiased species distributions. *ICML SPIGM Workshop* \[[Paper](https://openreview.net/pdf?id=ccTEfwwTmI), [GitHub](https://github.com/RichardZhu52/icml26-BIRDGen)\]
+- **Zhu, R.\***, Hou, C.\*, & McPhie, K. (2026). BIRDGen: Multimodal conditional inference of latent unbiased species distributions. *ICML SPIGM Workshop* \[[Paper](https://openreview.net/pdf?id=ccTEfwwTmI), [GitHub](https://github.com/RichardZhu52/icml26-BIRDGen)\]
 
 \* denotes equal contribution
